@@ -1,4 +1,5 @@
 #include <Wire.h>
+#include <math.h>
 
 #define ADDRESS 0x38
 #define INITIALIZATION 0xBE
@@ -8,24 +9,32 @@ void setup() {
   Serial.begin(115200);
   Serial.println("Qwiic Humidity AHT20 test script");
   Wire.begin(); //Join I2C bus
+}
 
-  //START MEASUREMENT SEQUENCE!!
+void loop() {
+    //START MEASUREMENT SEQUENCE!!
 
   //Wait 40 ms
   Serial.println("Wait 40 ms");
   delay(40);
 
   //Check calibration bit
-  Wire.beginTransmission(ADDRESS);
-  uint8_t stat = Wire.read();
-  Wire.endTransmission();
+  uint8_t stat;
+  Wire.requestFrom(ADDRESS, 1);
+  while (Wire.available())
+    stat = Wire.read();
+  //DEBUGGING
+  Serial.print("State: 0x");
+  Serial.println(stat, HEX);
   uint8_t temp = 1;
   temp = temp << 3;
-  if (!(stat && temp))
+  //Make sure calibration bit IS set
+  if (!(stat & temp))
   {
     Serial.println("Chip not callibrated! Freezing.");
     while (1);
   }
+  //Continue
   Serial.println("AHT20 callibrated!");
 
   //Initialize
@@ -43,19 +52,25 @@ void setup() {
   Serial.println("AHT20 measurement has been triggered.");
 
   //Wait 75 ms
-  Serial.println("Wait 75 ms");
-  delay(75);
+  Serial.println("Wait 100 ms");
+  delay(100);
 
   //Check the busy bit
-  Wire.begin(ADDRESS);
-  stat = Wire.read();
+  Wire.requestFrom(ADDRESS, 1);
+  while (Wire.available())
+    stat = Wire.read();
+  //DEBUGGING
+  Serial.print("State: 0x");
+  Serial.println(stat, HEX);
   temp = 1;
   temp = temp << 7;
-  if (!(stat && temp))
+  //Make sure busy bit IS NOT set
+  if (stat & temp)
   {
     Serial.println("Can't continue. AHT20 indicating busy taking measurement. Freezing.");
     while (1);
   }
+  //Continue
   Serial.println("AHT20 not busy. Continue.");
 
   //Read the next six bytes of data
@@ -65,35 +80,53 @@ void setup() {
     while (1);
   }
   uint8_t state = Wire.read();
+  Serial.print("State: 0x");
+  Serial.println(state, HEX);
 
   uint32_t incoming = 0;
   incoming |= (uint32_t)Wire.read() << (8 * 2);
+  Serial.println(incoming, HEX);
   incoming |= (uint32_t)Wire.read() << (8 * 1);
+  Serial.println(incoming, HEX);
   uint8_t midByte = Wire.read();
 
   incoming |= midByte << (8 * 0);
+  Serial.println(incoming, HEX);
   uint32_t humidity = incoming >> 4;
+  Serial.println(humidity, HEX);  
+  Serial.println("Read-in humidity correct, I think?");
 
-  uint32_t temperature = midByte << (8 * 2);
-  temperature = (uint32_t)Wire.read() << (8 * 1);
-  temperature = (uint32_t)Wire.read() << (8 * 0);
+  uint32_t temperature = (uint32_t)midByte << (8 * 2);
+  Serial.println(temperature, HEX);
+  temperature |= (uint32_t)Wire.read() << (8 * 1);
+  Serial.println(temperature, HEX);
+  temperature |= (uint32_t)Wire.read() << (8 * 0);
+  Serial.println(temperature, HEX);
 
   //Need to get rid of data in bits > 20
   temperature = temperature & ~(0xFFF00000);
+  Serial.println(temperature, HEX);
+  Serial.println("Read-in temperature correct, too.");
+  
   Serial.println("Read-in AHT20 raw data");
+  Serial.print("Raw temp: 0x");
+  Serial.println(temperature, HEX);
+  Serial.print("Raw humidity: 0x");
+  Serial.println(humidity, HEX);
 
   //Calculate degrees celcius and %RH
-  temperature = (temperature / 2 ^ (20)) * 200 - 50;
-  humidity = (humidity / 2 ^ (20)) * 100;
+  float Temp;
+  Temp = ((float)temperature / pow(2.0, 20.0)) * 200 - 50;
+  float Humid;
+  Humid = ((float)humidity / pow(2.0, 20.0)) * 100;
 
   //Print the result
   Serial.print("Temperature: ");
-  Serial.print(temperature);
+  Serial.print(Temp);
   Serial.print(" C \t Humidity: ");
-  Serial.print(humidity);
+  Serial.print(Humid);
   Serial.println("% RH");
-}
+  Serial.println();
 
-void loop() {
-
+  delay(3000);
 }
