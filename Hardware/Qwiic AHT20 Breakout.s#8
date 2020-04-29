@@ -476,6 +476,12 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pin name="3.3V" x="0" y="0" visible="off" length="short" direction="sup" rot="R90"/>
 <text x="0" y="2.794" size="1.778" layer="96" align="bottom-center">&gt;VALUE</text>
 </symbol>
+<symbol name="DGND">
+<description>&lt;h3&gt;Digital Ground Supply&lt;/h3&gt;</description>
+<wire x1="-1.905" y1="0" x2="1.905" y2="0" width="0.254" layer="94"/>
+<pin name="GND" x="0" y="2.54" visible="off" length="short" direction="sup" rot="R270"/>
+<text x="0" y="-0.254" size="1.778" layer="96" align="top-center">&gt;VALUE</text>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="3.3V" prefix="SUPPLY">
@@ -483,6 +489,20 @@ You are welcome to use this library for commercial purposes. For attribution, we
 &lt;p&gt;Power supply symbol for a specifically-stated 3.3V source.&lt;/p&gt;</description>
 <gates>
 <gate name="G$1" symbol="3.3V" x="0" y="0"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="GND" prefix="GND">
+<description>&lt;h3&gt;Ground Supply Symbol&lt;/h3&gt;
+&lt;p&gt;Generic signal ground supply symbol.&lt;/p&gt;</description>
+<gates>
+<gate name="1" symbol="DGND" x="0" y="0"/>
 </gates>
 <devices>
 <device name="">
@@ -7188,6 +7208,14 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="SUPPLY2" library="SparkFun-PowerSymbols" deviceset="3.3V" device=""/>
 <part name="C1" library="SparkFun-Capacitors" deviceset="0.1UF" device="-0603-25V-(+80/-20%)" value="0.1uF"/>
 <part name="SUPPLY3" library="SparkFun-PowerSymbols" deviceset="3.3V" device=""/>
+<part name="JP8" library="SparkFun-Hardware" deviceset="STAND-OFF" device=""/>
+<part name="JP9" library="SparkFun-Hardware" deviceset="STAND-OFF" device=""/>
+<part name="GND1" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
+<part name="GND2" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
+<part name="GND3" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
+<part name="GND4" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
+<part name="GND5" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
+<part name="GND6" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -7274,6 +7302,26 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </instance>
 <instance part="SUPPLY3" gate="G$1" x="63.5" y="132.08" smashed="yes">
 <attribute name="VALUE" x="63.5" y="134.874" size="1.778" layer="96" align="bottom-center"/>
+</instance>
+<instance part="JP8" gate="G$1" x="243.84" y="30.48" smashed="yes"/>
+<instance part="JP9" gate="G$1" x="243.84" y="27.94" smashed="yes"/>
+<instance part="GND1" gate="1" x="33.02" y="106.68" smashed="yes">
+<attribute name="VALUE" x="33.02" y="106.426" size="1.778" layer="96" align="top-center"/>
+</instance>
+<instance part="GND2" gate="1" x="63.5" y="116.84" smashed="yes">
+<attribute name="VALUE" x="63.5" y="116.586" size="1.778" layer="96" align="top-center"/>
+</instance>
+<instance part="GND3" gate="1" x="106.68" y="109.22" smashed="yes">
+<attribute name="VALUE" x="106.68" y="108.966" size="1.778" layer="96" align="top-center"/>
+</instance>
+<instance part="GND4" gate="1" x="76.2" y="38.1" smashed="yes">
+<attribute name="VALUE" x="76.2" y="37.846" size="1.778" layer="96" align="top-center"/>
+</instance>
+<instance part="GND5" gate="1" x="43.18" y="38.1" smashed="yes">
+<attribute name="VALUE" x="43.18" y="37.846" size="1.778" layer="96" align="top-center"/>
+</instance>
+<instance part="GND6" gate="1" x="43.18" y="10.16" smashed="yes">
+<attribute name="VALUE" x="43.18" y="9.906" size="1.778" layer="96" align="top-center"/>
 </instance>
 </instances>
 <busses>
@@ -7395,44 +7443,40 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="165.1" y1="142.24" x2="162.56" y2="142.24" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$4" class="0">
+<net name="GND" class="0">
+<segment>
+<pinref part="D1" gate="G$1" pin="C"/>
+<wire x1="33.02" y1="109.22" x2="33.02" y2="111.76" width="0.1524" layer="91"/>
+<pinref part="GND1" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="C1" gate="G$1" pin="2"/>
+<wire x1="63.5" y1="119.38" x2="63.5" y2="121.92" width="0.1524" layer="91"/>
+<pinref part="GND2" gate="1" pin="GND"/>
+</segment>
 <segment>
 <pinref part="U1" gate="G$1" pin="VSS"/>
 <wire x1="111.76" y1="116.84" x2="106.68" y2="116.84" width="0.1524" layer="91"/>
 <wire x1="106.68" y1="116.84" x2="106.68" y2="111.76" width="0.1524" layer="91"/>
+<pinref part="GND3" gate="1" pin="GND"/>
 </segment>
-</net>
-<net name="N$5" class="0">
-<segment>
-<pinref part="C1" gate="G$1" pin="2"/>
-<wire x1="63.5" y1="119.38" x2="63.5" y2="121.92" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$6" class="0">
-<segment>
-<pinref part="D1" gate="G$1" pin="C"/>
-<wire x1="33.02" y1="109.22" x2="33.02" y2="111.76" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$7" class="0">
 <segment>
 <pinref part="J3" gate="G$1" pin="GND"/>
 <wire x1="78.74" y1="43.18" x2="76.2" y2="43.18" width="0.1524" layer="91"/>
 <wire x1="76.2" y1="43.18" x2="76.2" y2="40.64" width="0.1524" layer="91"/>
+<pinref part="GND4" gate="1" pin="GND"/>
 </segment>
-</net>
-<net name="N$8" class="0">
 <segment>
 <pinref part="J2" gate="G$1" pin="1"/>
 <wire x1="45.72" y1="43.18" x2="43.18" y2="43.18" width="0.1524" layer="91"/>
 <wire x1="43.18" y1="43.18" x2="43.18" y2="40.64" width="0.1524" layer="91"/>
+<pinref part="GND5" gate="1" pin="GND"/>
 </segment>
-</net>
-<net name="N$9" class="0">
 <segment>
 <pinref part="J4" gate="G$1" pin="1"/>
 <wire x1="45.72" y1="15.24" x2="43.18" y2="15.24" width="0.1524" layer="91"/>
 <wire x1="43.18" y1="15.24" x2="43.18" y2="12.7" width="0.1524" layer="91"/>
+<pinref part="GND6" gate="1" pin="GND"/>
 </segment>
 </net>
 </nets>

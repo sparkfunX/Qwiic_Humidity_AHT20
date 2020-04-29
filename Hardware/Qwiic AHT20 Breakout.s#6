@@ -7350,7 +7350,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="SHEET" x="233.68" y="1.27" size="2.54" layer="94" font="vector"/>
 <attribute name="DRAWING_NAME" x="162.814" y="17.78" size="2.7432" layer="94" font="vector"/>
 </instance>
-<instance part="U$2" gate="G$1" x="121.92" y="7.62" smashed="yes"/>
+<instance part="U$2" gate="G$1" x="208.28" y="40.64" smashed="yes"/>
 <instance part="SUPPLY8" gate="G$1" x="43.18" y="25.4" smashed="yes">
 <attribute name="VALUE" x="43.18" y="28.194" size="1.778" layer="96" align="bottom-center"/>
 </instance>
@@ -7358,8 +7358,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="VALUE" x="58.42" y="12.446" size="1.778" layer="96" font="vector" rot="MR0" align="top-left"/>
 <attribute name="NAME" x="58.42" y="25.654" size="1.778" layer="95" font="vector" rot="MR0"/>
 </instance>
-<instance part="LOGO1" gate="G$1" x="121.92" y="22.86" smashed="yes"/>
-<instance part="U$1" gate="G$1" x="121.92" y="7.62" smashed="yes"/>
+<instance part="LOGO1" gate="G$1" x="236.22" y="45.72" smashed="yes"/>
+<instance part="U$1" gate="G$1" x="208.28" y="40.64" smashed="yes"/>
 <instance part="JP1" gate="G$1" x="236.22" y="27.94" smashed="yes"/>
 <instance part="JP5" gate="G$1" x="233.68" y="27.94" smashed="yes"/>
 <instance part="R3" gate="G$1" x="33.02" y="127" smashed="yes" rot="R90">

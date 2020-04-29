@@ -7710,7 +7710,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="GND6" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
 <part name="LED" library="SparkFun-Jumpers" deviceset="JUMPER-SMT_2_NC_TRACE" device="_NO-SILK" package3d_urn="urn:adsk.eagle:package:39286/1" value=""/>
 <part name="R4" library="SparkFun-Resistors" deviceset="10KOHM" device="-0603-1/10W-1%" value="10k"/>
-<part name="LED1" library="SparkFun-Jumpers" deviceset="JUMPER-SMT_2_NC_TRACE" device="_NO-SILK" package3d_urn="urn:adsk.eagle:package:39286/1" value=""/>
+<part name="ADR" library="SparkFun-Jumpers" deviceset="JUMPER-SMT_2_NC_TRACE" device="_NO-SILK" package3d_urn="urn:adsk.eagle:package:39286/1" value=""/>
 <part name="U2" library="AHT20" deviceset="AHT20" device="QFN-6"/>
 <part name="SUPPLY5" library="SparkFun-PowerSymbols" deviceset="3.3V" device=""/>
 <part name="GND7" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
@@ -7718,9 +7718,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <sheets>
 <sheet>
 <plain>
-<text x="172.72" y="10.668" size="2.54" layer="94">Bryan Hoff</text>
-<text x="237.744" y="7.366" size="2.54" layer="94">X01</text>
-<text x="124.46" y="99.06" size="1.778" layer="97" align="center">7-bit unshifted I2C address: 0x38</text>
+<text x="237.744" y="7.366" size="2.54" layer="94">x01</text>
+<text x="116.84" y="106.68" size="1.778" layer="97" align="center">7-bit unshifted I2C address: 0x38</text>
 <text x="38.608" y="114.046" size="1.778" layer="97">Power</text>
 <wire x1="0" y1="68.58" x2="248.92" y2="68.58" width="0.2032" layer="97" style="longdash"/>
 <text x="63.5" y="60.96" size="2.54" layer="97" align="center">Connectors</text>
@@ -7825,7 +7824,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="NAME" x="158.496" y="127" size="1.778" layer="95" font="vector" rot="R90" align="bottom-center"/>
 <attribute name="VALUE" x="161.544" y="127" size="1.778" layer="96" font="vector" rot="R90" align="top-center"/>
 </instance>
-<instance part="LED1" gate="G$1" x="160.02" y="111.76" smashed="yes" rot="R90">
+<instance part="ADR" gate="G$1" x="160.02" y="111.76" smashed="yes" rot="R90">
 <attribute name="NAME" x="157.988" y="109.474" size="1.778" layer="95" font="vector" rot="R90"/>
 <attribute name="VALUE" x="162.56" y="109.22" size="1.778" layer="96" font="vector" rot="R90" align="top-left"/>
 </instance>
@@ -8000,7 +7999,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="GND6" gate="1" pin="GND"/>
 </segment>
 <segment>
-<pinref part="LED1" gate="G$1" pin="1"/>
+<pinref part="ADR" gate="G$1" pin="1"/>
 <pinref part="GND7" gate="1" pin="GND"/>
 <wire x1="160.02" y1="104.14" x2="160.02" y2="106.68" width="0.1524" layer="91"/>
 </segment>
@@ -8015,7 +8014,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <net name="N$5" class="0">
 <segment>
 <pinref part="U2" gate="G$1" pin="ADR"/>
-<pinref part="LED1" gate="G$1" pin="2"/>
+<pinref part="ADR" gate="G$1" pin="2"/>
 <wire x1="127" y1="119.38" x2="160.02" y2="119.38" width="0.1524" layer="91"/>
 <wire x1="160.02" y1="119.38" x2="160.02" y2="116.84" width="0.1524" layer="91"/>
 <pinref part="R4" gate="G$1" pin="1"/>
