@@ -214,14 +214,12 @@
 </packages>
 <symbols>
 <symbol name="AHT20">
-<description>&lt;h3&gt;Silicon Labs Si7021 I&lt;sup&gt;2&lt;/sup&gt;C Humidity and Temperature Sensor&lt;/h3&gt;
-&lt;p&gt;The Si7021 is a low-cost, easy-to-use, highly accurate, digital humidity and temperature sensor. This sensor is ideal for environmental sensing and data logging and perfect for build a weather stations or humidor control system. All you need are two lines for I2C communication, and you’ll have relative humidity readings and very accurate temperature readings as a bonus!&lt;/p&gt;</description>
 <wire x1="-7.62" y1="-2.54" x2="-7.62" y2="5.08" width="0.254" layer="94"/>
 <wire x1="-7.62" y1="5.08" x2="7.62" y2="5.08" width="0.254" layer="94"/>
 <wire x1="7.62" y1="5.08" x2="7.62" y2="-2.54" width="0.254" layer="94"/>
 <wire x1="7.62" y1="-2.54" x2="-7.62" y2="-2.54" width="0.254" layer="94"/>
-<pin name="SCK" x="10.16" y="0" visible="pin" length="short" direction="in" rot="R180"/>
-<pin name="DATA" x="10.16" y="2.54" visible="pin" length="short" rot="R180"/>
+<pin name="SCL" x="10.16" y="0" visible="pin" length="short" direction="in" rot="R180"/>
+<pin name="SDA" x="10.16" y="2.54" visible="pin" length="short" rot="R180"/>
 <pin name="GND" x="-10.16" y="0" visible="pin" length="short" direction="pwr"/>
 <pin name="VDD" x="-10.16" y="2.54" visible="pin" length="short" direction="pwr"/>
 <text x="-7.62" y="5.334" size="1.778" layer="95" font="vector">&gt;Name</text>
@@ -239,9 +237,9 @@
 <devices>
 <device name="QFN-6" package="QFN-6">
 <connects>
-<connect gate="G$1" pin="DATA" pad="DATA"/>
 <connect gate="G$1" pin="GND" pad="GND"/>
-<connect gate="G$1" pin="SCK" pad="SCK"/>
+<connect gate="G$1" pin="SCL" pad="SCK"/>
+<connect gate="G$1" pin="SDA" pad="DATA"/>
 <connect gate="G$1" pin="VDD" pad="VDD"/>
 </connects>
 <technologies>
