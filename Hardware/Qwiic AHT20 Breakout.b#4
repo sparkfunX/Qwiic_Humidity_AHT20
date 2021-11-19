@@ -2185,20 +2185,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <vertex x="-0.70485" y="-0.127"/>
 </polygon>
 </package>
-<package name="SMT-JUMPER_2_NO_SILK" urn="urn:adsk.eagle:footprint:39254/1">
-<text x="0" y="1.143" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center">&gt;NAME</text>
-<text x="0" y="-1.143" size="0.6096" layer="27" font="vector" ratio="20" align="top-center">&gt;VALUE</text>
-<wire x1="0.8636" y1="-1.016" x2="-0.8636" y2="-1.016" width="0.1524" layer="21"/>
-<wire x1="0.8636" y1="1.016" x2="1.1176" y2="0.762" width="0.1524" layer="21" curve="-90"/>
-<wire x1="-1.1176" y1="0.762" x2="-0.8636" y2="1.016" width="0.1524" layer="21" curve="-90"/>
-<wire x1="-1.1176" y1="-0.762" x2="-0.8636" y2="-1.016" width="0.1524" layer="21" curve="90"/>
-<wire x1="0.8636" y1="-1.016" x2="1.1176" y2="-0.762" width="0.1524" layer="21" curve="90"/>
-<wire x1="1.1176" y1="-0.762" x2="1.1176" y2="0.762" width="0.1524" layer="21"/>
-<wire x1="-1.1176" y1="-0.762" x2="-1.1176" y2="0.762" width="0.1524" layer="21"/>
-<wire x1="-0.8636" y1="1.016" x2="0.8636" y2="1.016" width="0.1524" layer="21"/>
-<smd name="1" x="-0.4064" y="0" dx="0.635" dy="1.27" layer="1" cream="no"/>
-<smd name="2" x="0.4064" y="0" dx="0.635" dy="1.27" layer="1" cream="no"/>
-</package>
 <package name="SMT-JUMPER_2_NC_TRACE_SILK" urn="urn:adsk.eagle:footprint:39258/1" locally_modified="yes">
 <wire x1="0.762" y1="-1.016" x2="-0.762" y2="-1.016" width="0.2032" layer="21"/>
 <wire x1="0.762" y1="1.016" x2="1.2192" y2="0.5588" width="0.2032" layer="21" curve="-90"/>
@@ -2230,11 +2216,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <package3d name="SMT-JUMPER_3_2-NC_TRACE_SILK" urn="urn:adsk.eagle:package:39289/1" locally_modified="yes" type="box">
 <packageinstances>
 <packageinstance name="SMT-JUMPER_3_2-NC_TRACE_SILK"/>
-</packageinstances>
-</package3d>
-<package3d name="SMT-JUMPER_2_NO_SILK" urn="urn:adsk.eagle:package:39279/1" type="box">
-<packageinstances>
-<packageinstance name="SMT-JUMPER_2_NO_SILK"/>
 </packageinstances>
 </package3d>
 <package3d name="SMT-JUMPER_2_NC_TRACE_SILK" urn="urn:adsk.eagle:package:39281/1" type="box">
@@ -3204,15 +3185,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="NAME" x="6.35" y="7.112" size="0.6096" layer="26" font="vector" ratio="20" rot="MR180" align="bottom-center"/>
 <attribute name="VALUE" x="6.35" y="9.398" size="0.6096" layer="28" font="vector" ratio="20" rot="MR180" align="top-center"/>
 </element>
-<element name="R4" library="SparkFun-Resistors" package="0603" value="10k" x="8.89" y="16.51" smashed="yes">
-<attribute name="NAME" x="8.89" y="17.272" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center"/>
-<attribute name="PROD_ID" value="RES-00824" x="8.89" y="16.51" size="1.778" layer="27" font="vector" ratio="15" display="off"/>
-<attribute name="VALUE" x="8.89" y="15.748" size="0.6096" layer="27" font="vector" ratio="20" align="top-center"/>
-</element>
-<element name="ADR" library="SparkFun-Jumpers" package="SMT-JUMPER_2_NO_SILK" package3d_urn="urn:adsk.eagle:package:39279/1" value="" x="7.62" y="17.78" smashed="yes" rot="MR0">
-<attribute name="NAME" x="7.62" y="18.923" size="0.6096" layer="26" font="vector" ratio="20" rot="MR0" align="bottom-center"/>
-<attribute name="VALUE" x="7.62" y="16.637" size="0.6096" layer="28" font="vector" ratio="20" rot="MR0" align="top-center"/>
-</element>
 <element name="U2" library="AHT20" package="QFN-6" value="AHT20QFN-6" x="12.7" y="12.7" smashed="yes">
 <attribute name="NAME" x="12.7" y="14.605" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center"/>
 <attribute name="PROD_ID" value="IC-" x="12.7" y="12.7" size="1.778" layer="27" font="vector" ratio="15" display="off"/>
@@ -3233,7 +3205,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <contactref element="C1" pad="1"/>
 <contactref element="LED" pad="2"/>
 <contactref element="U2" pad="VDD"/>
-<contactref element="R4" pad="2"/>
 <wire x1="11.7" y1="12.7" x2="11.811" y2="12.7" width="0.1524" layer="1"/>
 <wire x1="11.85" y1="9.13294375" x2="11.85" y2="7.62" width="0.1524" layer="1"/>
 <wire x1="5.08" y1="13.2" x2="6.977" y2="13.2" width="0.3048" layer="1"/>
@@ -3262,7 +3233,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <via x="7.747" y="8.255" extent="1-16" drill="0.3048"/>
 <wire x1="6.8707" y1="8.255" x2="7.747" y2="8.255" width="0.1524" layer="16"/>
 <wire x1="12.7" y1="17.78" x2="12.7" y2="16.383" width="0.1524" layer="16"/>
-<wire x1="9.74" y1="16.51" x2="9.271" y2="16.979" width="0.1524" layer="1"/>
 <wire x1="9.271" y1="16.979" x2="9.271" y2="17.78" width="0.1524" layer="1"/>
 <via x="9.271" y="17.78" extent="1-16" drill="0.3048"/>
 <wire x1="9.271" y1="17.78" x2="9.271" y2="16.383" width="0.1524" layer="16"/>
@@ -3289,7 +3259,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <contactref element="J2" pad="1"/>
 <contactref element="J4" pad="1"/>
 <contactref element="U2" pad="GND"/>
-<contactref element="ADR" pad="1"/>
 <wire x1="13.7" y1="12.7" x2="13.319" y2="12.7" width="0.1524" layer="1"/>
 <wire x1="13.319" y1="12.7" x2="12.7254" y2="13.2936" width="0.1524" layer="1"/>
 <wire x1="12.7254" y1="13.2936" x2="12.7254" y2="13.716" width="0.1524" layer="1"/>
@@ -3301,6 +3270,16 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="13.2334" y1="9.6266" x2="13.335" y2="9.525" width="0.1524" layer="16"/>
 <wire x1="12.7254" y1="13.716" x2="12.7" y2="13.6906" width="0.1524" layer="16"/>
 <wire x1="12.7" y1="13.6906" x2="12.7" y2="9.525" width="0.1524" layer="16"/>
+<wire x1="19.05" y1="11.176" x2="20.32" y2="11.2" width="0" layer="19" extent="1-1"/>
+<wire x1="13.7" y1="12.7" x2="19.05" y2="11.176" width="0" layer="19" extent="1-1"/>
+<wire x1="13.2334" y1="9.6266" x2="12.7" y2="9.525" width="0" layer="19" extent="16-16"/>
+<wire x1="13.55" y1="7.62" x2="13.335" y2="9.525" width="0" layer="19" extent="1-16"/>
+<wire x1="14.605" y1="7.493" x2="13.55" y2="7.62" width="0" layer="19" extent="1-1"/>
+<wire x1="5.08" y1="14.2" x2="12.7254" y2="13.716" width="0" layer="19" extent="1-1"/>
+<wire x1="3.683" y1="14.224" x2="5.08" y2="14.2" width="0" layer="19" extent="1-1"/>
+<wire x1="3.417" y1="6.985" x2="3.683" y2="14.224" width="0" layer="19" extent="1-1"/>
+<wire x1="4.699" y1="6.985" x2="3.417" y2="6.985" width="0" layer="19" extent="1-1"/>
+<wire x1="8.89" y1="1.27" x2="4.699" y2="6.985" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="SCL">
 <contactref element="J2" pad="4"/>
@@ -3410,28 +3389,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="3.39" y1="8.255" x2="4.826" y2="8.255" width="0.1524" layer="1"/>
 <via x="4.826" y="8.255" extent="1-16" drill="0.3048"/>
 <wire x1="5.8293" y1="8.255" x2="4.826" y2="8.255" width="0.1524" layer="16"/>
-</signal>
-<signal name="N$5">
-<contactref element="U2" pad="ADR"/>
-<contactref element="ADR" pad="2"/>
-<contactref element="R4" pad="1"/>
-<wire x1="11.7" y1="13.7" x2="11.827" y2="13.7" width="0.1524" layer="1"/>
-<wire x1="11.827" y1="13.7" x2="12.446" y2="13.081" width="0.1524" layer="1"/>
-<via x="12.7" y="8.763" extent="1-16" drill="0.3048"/>
-<wire x1="8.04" y1="16.51" x2="7.62" y2="16.51" width="0.1524" layer="1"/>
-<wire x1="7.62" y1="16.51" x2="6.35" y2="15.24" width="0.1524" layer="1"/>
-<via x="6.35" y="15.24" extent="1-16" drill="0.3048"/>
-<wire x1="6.35" y1="15.24" x2="6.35" y2="12.446" width="0.1524" layer="16"/>
-<wire x1="10.033" y1="8.763" x2="12.7" y2="8.763" width="0.1524" layer="16"/>
-<wire x1="6.35" y1="12.446" x2="10.033" y2="8.763" width="0.1524" layer="16"/>
-<wire x1="6.35" y1="17.4244" x2="6.35" y2="15.24" width="0.1524" layer="16"/>
-<wire x1="7.2136" y1="17.78" x2="6.7056" y2="17.78" width="0.1524" layer="16"/>
-<wire x1="6.7056" y1="17.78" x2="6.35" y2="17.4244" width="0.1524" layer="16"/>
-<wire x1="12.446" y1="12.73305625" x2="12.954" y2="12.22505625" width="0.1524" layer="1"/>
-<wire x1="12.446" y1="13.081" x2="12.446" y2="12.73305625" width="0.1524" layer="1"/>
-<wire x1="12.954" y1="9.652" x2="12.7" y2="9.398" width="0.1524" layer="1"/>
-<wire x1="12.7" y1="9.398" x2="12.7" y2="8.763" width="0.1524" layer="1"/>
-<wire x1="12.954" y1="12.22505625" x2="12.954" y2="9.652" width="0.1524" layer="1"/>
 </signal>
 <signal name="N$6">
 <polygon width="0.1524" layer="16" pour="cutout" isolate="0.3048">

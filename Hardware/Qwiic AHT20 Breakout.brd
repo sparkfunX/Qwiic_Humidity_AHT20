@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.6.0">
+<eagle version="9.6.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="yes"/>
@@ -174,7 +174,7 @@
 <text x="12.7" y="35.56" size="1.778" layer="47" font="vector" ratio="15" align="center">Dimensions in inches</text>
 <wire x1="15.24" y1="11.43" x2="15.24" y2="13.843" width="0.762" layer="20"/>
 <wire x1="14.097" y1="15.113" x2="11.43" y2="15.113" width="0.762" layer="20"/>
-<text x="41.91" y="38.1" size="1.778" layer="51" font="vector" ratio="15">0.8mm board</text>
+<text x="41.91" y="38.1" size="1.778" layer="51" font="vector" ratio="15">0.8mm Thickness</text>
 <wire x1="10.16" y1="11.557" x2="10.16" y2="13.97" width="0.762" layer="20"/>
 <wire x1="10.16" y1="13.97" x2="11.43" y2="15.113" width="0.762" layer="20" curve="-92.115627"/>
 <wire x1="14.097" y1="15.113" x2="15.24" y2="13.843" width="0.762" layer="20" curve="-92.115627"/>
